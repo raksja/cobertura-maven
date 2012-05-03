@@ -1,1 +1,11 @@
-Cobertura Setup in MultiModule Maven 
+
+##Instrument
+mvn clean install -Pdo-instrumentation
+
+##Bundle Up
+cd ./cobertura-maven/Cobertura
+mvn package -Pcoverage-prepare-report-bundle
+
+##Report Generation
+cd ./cobertura-maven/Cobertura/target/Cobertura-0.0.1-SNAPSHOT-coberturaReporting.dir
+ant -f cobertura.xml create-html-report
